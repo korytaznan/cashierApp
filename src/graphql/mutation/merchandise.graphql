@@ -1,0 +1,60 @@
+mutation CreateMerchandise(
+    $merchandiseCode: String!
+    $merchandiseName: String!
+    $description: String
+    $group: String!
+    $type: TypeMerchandise!
+    $unit: String!
+    $price: Float
+) {
+  createMerchandise(
+    merchandiseCode: $merchandiseCode,
+    merchandiseName: $merchandiseName,
+    description: $description,
+    group: $group,
+    type: $type,
+    unit: $unit,
+    price: $price
+  ) {
+    message
+    success
+  }
+}
+
+mutation EditMerchandise(
+  $id: String!
+  $merchandiseCode: String
+  $merchandiseName: String
+  $description: String
+  $group: String
+  $type: TypeMerchandise
+  $unit: String
+  $price: Float
+) {
+    editMerchandise(
+        id: $id,
+        merchandiseCode: $merchandiseCode,
+        merchandiseName: $merchandiseName,
+        description: $description,
+        group: $group,
+        type: $type,
+        unit: $unit,
+        price: $price
+    ) {
+        id,
+        merchandiseCode,
+        merchandiseName,
+        description,
+        unit,
+        group,
+        type,
+        price,
+  }
+}
+
+mutation DeleteMerchandise($id: String!) {
+  deleteMerchandise(id: $id) {
+    message
+    success
+  }
+}

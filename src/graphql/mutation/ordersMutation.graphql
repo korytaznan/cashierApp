@@ -1,0 +1,49 @@
+mutation CreateOrder($tableId: ID!, $orderData: [OrderDataInput!]) {
+    createOrder(
+        tableId: $tableId
+        orderData: $orderData
+    ) {
+        message
+        success
+    }
+}
+
+mutation EditOrder(
+    $id: ID!
+    $tableId: ID
+    $discount: Float
+    $unitDiscount: TypeUnitDiscount
+    $orderData: [OrderDataInput]) {
+        editOrder(
+            id: $id
+            discount: $discount
+            unitDiscount: $unitDiscount
+            tableId: $tableId
+            orderData: $orderData
+        ) {
+            id
+            createdAt
+            tableId
+            price
+            totalPrice
+            discount
+            priceDiscount
+            unitDiscount
+            orderData {
+                id
+                count
+                price
+                name
+                unit
+                totalPrice
+            }
+            count
+        }
+}
+
+mutation DeleteOrder($id: ID!) {
+    deleteOrder(id: $id) {
+        message
+        success
+    }
+}

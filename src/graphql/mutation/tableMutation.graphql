@@ -1,0 +1,28 @@
+mutation CreateTable(
+    $tableCode: String!
+    $tableName: String!
+    $used: Boolean!
+    $description: String
+) {
+  createTable(tableCode: $tableCode, tableName: $tableName, used: $used, description: $description) {
+    message
+    success
+  }
+}
+
+mutation EditTable($id: String!, $tableCode: String!, $tableName: String!, $used: Boolean!, $description: String) {
+    editTable(id: $id, tableCode: $tableCode, tableName: $tableName, used: $used, description: $description) {
+        id,
+        tableCode,
+        tableName,
+        description,
+        used,
+  }
+}
+
+mutation DeleteTable($id: String!) {
+  deleteTable(id: $id) {
+    message
+    success
+  }
+}

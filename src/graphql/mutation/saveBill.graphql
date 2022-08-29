@@ -1,0 +1,28 @@
+mutation SaveBill(
+    $createdOrderAt: Date!
+    $tableId: ID!
+    $paymentAt: Date!
+    $price: Float!
+    $totalPrice: Float!
+    $discount: Float
+    $priceDiscount: Int
+    $unitDiscount: TypeUnitDiscount
+    $orderData: [OrderDataInput!]
+    $count: Float!
+    ) {
+          saveBill(
+    createdOrderAt: $createdOrderAt
+    tableId: $tableId
+    paymentAt: $paymentAt
+    price: $price
+    totalPrice: $totalPrice
+    discount: $discount
+    priceDiscount: $priceDiscount
+    unitDiscount: $unitDiscount
+    orderData: $orderData
+    count: $count
+  ) {
+    message
+    success
+  }
+}

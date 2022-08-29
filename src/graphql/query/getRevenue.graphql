@@ -1,0 +1,22 @@
+query GetRevenue($startDate: Date, $endDate: Date, $limit: Int!, $offset: Int!) {
+  getRevenue(limit: $limit, offset: $offset, startDate: $startDate, endDate: $endDate) {
+    id,
+    createdOrderAt,
+    tableId,
+    paymentAt,
+    price,
+    totalPrice,
+    discount,
+    priceDiscount,
+    unitDiscount,
+    orderData {
+      id,
+      count,
+      price,
+      name,
+      unit,
+      totalPrice
+    },
+    count
+  }
+}

@@ -1,0 +1,43 @@
+query GetOrders {
+    getOrders {
+    id,
+    createdAt,
+    tableId,
+    price,
+    totalPrice,
+    discount,
+    priceDiscount,
+    unitDiscount,
+    orderData{
+      id,
+      count,
+      price,
+      name,
+      unit,
+      totalPrice
+    },
+    count,
+  }
+}
+
+query GetOrder($id: ID!) {
+  getOrder(id: $id) {
+    id,
+    createdAt,
+    tableId,
+    price,
+    totalPrice,
+    discount,
+    priceDiscount,
+    unitDiscount,
+    orderData{
+      id,
+      count,
+      price,
+      name,
+      unit,
+      totalPrice
+    },
+    count,
+  }
+}

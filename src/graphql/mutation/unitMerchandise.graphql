@@ -1,0 +1,40 @@
+mutation CreateUnitMerchandise(
+    $unitCode: String!
+    $unitName: String!
+    $description: String
+) {
+  createUnitMerchandise(
+    unitCode: $unitCode,
+    unitName: $unitName, 
+    description: $description
+  ) {
+    message
+    success
+  }
+}
+
+mutation EditUnitMerchandise(
+  $id: String!,
+  $unitCode: String!, 
+  $unitName: String!,
+  $description: String
+) {
+    editUnitMerchandise(
+      id: $id, 
+      unitCode: $unitCode, 
+      unitName: $unitName, 
+      description: $description
+    ) {
+        id,
+        unitCode,
+        unitName,
+        description,
+  }
+}
+
+mutation DeleteUnitMerchandise($id: String!) {
+  deleteUnitMerchandise(id: $id) {
+    message
+    success
+  }
+}

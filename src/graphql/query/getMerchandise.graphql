@@ -1,0 +1,12 @@
+query GetMerchandise($filterType: TypeMerchandise) {
+    getMerchandise(filterType: $filterType) {
+        id,
+        merchandiseCode,
+        merchandiseName,
+        description,
+        unit,
+        group,
+        type,
+        price,
+    }
+}

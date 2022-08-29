@@ -1,0 +1,6 @@
+mutation login($username: String!, $password: String!, $stallCode: String!) {
+  login(username: $username, password: $password, stallCode: $stallCode) {
+    message
+    token
+  }
+}

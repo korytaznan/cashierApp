@@ -1,0 +1,19 @@
+query GetTables {
+    getTables {
+      id,
+      tableCode,
+      tableName,
+      description,
+      used,
+    }
+}
+
+query GetTable($id: ID!) {
+    getTable(id: $id) {
+      id,
+      tableCode,
+      tableName,
+      description,
+      used,
+    }
+}

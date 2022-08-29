@@ -1,0 +1,40 @@
+mutation CreateMerchandiseGroup(
+    $merchandiseGroupCode: String!
+    $merchandiseGroupName: String!
+    $description: String
+) {
+  createMerchandiseGroup(
+    merchandiseGroupCode: $merchandiseGroupCode,
+    merchandiseGroupName: $merchandiseGroupName, 
+    description: $description
+  ) {
+    message
+    success
+  }
+}
+
+mutation EditMerchandiseGroup(
+  $id: String!,
+  $merchandiseGroupCode: String!, 
+  $merchandiseGroupName: String!,
+  $description: String
+) {
+    editMerchandiseGroup(
+      id: $id, 
+      merchandiseGroupCode: $merchandiseGroupCode, 
+      merchandiseGroupName: $merchandiseGroupName, 
+      description: $description
+    ) {
+        id,
+        merchandiseGroupCode,
+        merchandiseGroupName,
+        description,
+  }
+}
+
+mutation DeleteMerchandiseGroup($id: String!) {
+  deleteMerchandiseGroup(id: $id) {
+    message
+    success
+  }
+}

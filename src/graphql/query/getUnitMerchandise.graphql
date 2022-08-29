@@ -1,0 +1,8 @@
+query GetUnitMerchandise {
+    getUnitMerchandise {
+        id,
+        unitCode,
+        unitName,
+        description,
+    }
+}
